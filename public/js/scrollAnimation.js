@@ -28,6 +28,8 @@ XContainer.style.height = PADZBOTstartPosition.height + "px";
 const padzbotCloser = document.getElementById("padzbotCloser");
 const timgS = document.getElementsByClassName("timgS")
 const padzbotTitle = document.getElementById("padzbotTitle");
+const padzbotLogo = document.getElementById("padzbotLogo");
+const padzbotSideImage = document.getElementsByClassName("padzbotSideImage");
 
 var KENAPAstartPosition = {kTop: -wh * 0.8, ktF: 0, endTop: 0};
 var KENAPAendPosition = {kTop: 0, ktF: 0.12 * ww, endTop: wh * 0.04};
@@ -198,6 +200,16 @@ function padzbotAnimation(padzbotPageW) {
         XContainer.style.transform = `translateX(${-33 - (((percent - 0.6) / (0.7 - 0.6)) * (50 - 33))}%)`; 
     }
 
+    if (percent <= 0.65) {
+        for (let l = 0; l < padzbotSideImage.length; l++) {
+            padzbotSideImage[l].classList.remove("ttm");
+        }
+    } else {
+        for (let l = 0; l < padzbotSideImage.length; l++) {
+            padzbotSideImage[l].classList.add("ttm");
+        }
+    }
+
     if (percent <= 0.72) {
         XContainer.style.width = PADZBOTstartPosition.width + "px";
         Xttr.style.marginTop = PADZBOTstartPosition.tttr + "px";
@@ -277,7 +289,7 @@ function kenapaAnimation(kenapaPageW) {
     if (percent <= 0.5) {
         moneyImg.classList.add("offset");
         moneyImg.classList.remove("main", "sideLeft");
-    } else if (percent >= 0.63) {
+    } else if (percent >= 0.58) {
         moneyImg.classList.add("sideLeft");
         moneyImg.classList.remove("main", "offset");
     } else {
@@ -285,10 +297,10 @@ function kenapaAnimation(kenapaPageW) {
         moneyImg.classList.remove("offset", "sideLeft");
     }
 
-    if (percent <= 0.65) {
+    if (percent <= 0.62) {
         smileyImg.classList.add("offset");
         smileyImg.classList.remove("main", "sideRight");
-    } else if (percent >= 0.72) {
+    } else if (percent >= 0.68) {
         smileyImg.classList.add("sideRight");
         smileyImg.classList.remove("main", "offset");
     } else {
@@ -296,10 +308,10 @@ function kenapaAnimation(kenapaPageW) {
         smileyImg.classList.remove("offset", "sideRight");
     }
 
-    if (percent <= 0.74) {
+    if (percent <= 0.7) {
         brainImg.classList.add("offset");
         brainImg.classList.remove("main", "sideCenter");
-    } else if (percent >= 0.81) {
+    } else if (percent >= 0.76) {
         brainImg.classList.add("sideCenter");
         brainImg.classList.remove("main", "offset");
     } else {

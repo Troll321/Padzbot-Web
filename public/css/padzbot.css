@@ -131,6 +131,30 @@
     right: -2em;
 }
 
+.padzbot .timgWrench.ttm {
+    right: 50%;
+    opacity: 0;
+}
+
+.padzbot .timgPadma.ttm{
+    left: 50%;
+    opacity: 0;
+}
+
+.padzbot .padzbotLogo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 120%;
+    opacity: 0;
+    transition: opacity 300ms;
+    
+}
+
+.padzbot .padzbotLogo.ttm {
+    opacity: 1;
+}
+
 /* Second section */
 .padzbot .secondSection{
     width: 100%;
