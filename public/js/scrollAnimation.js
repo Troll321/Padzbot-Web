@@ -28,8 +28,10 @@ XContainer.style.height = PADZBOTstartPosition.height + "px";
 const padzbotCloser = document.getElementById("padzbotCloser");
 const timgS = document.getElementsByClassName("timgS")
 const padzbotTitle = document.getElementById("padzbotTitle");
-const padzbotLogo = document.getElementById("padzbotLogo");
-const padzbotSideImage = document.getElementsByClassName("padzbotSideImage");
+const logoPadzbot = document.getElementById("logoPadzbot");
+const logoWrench = document.getElementById("logoWrench");
+const logoPadmanaba = document.getElementById("logoPadmanaba");
+
 
 var KENAPAstartPosition = {kTop: -wh * 0.8, ktF: 0, endTop: 0};
 var KENAPAendPosition = {kTop: 0, ktF: 0.12 * ww, endTop: wh * 0.04};
@@ -200,14 +202,37 @@ function padzbotAnimation(padzbotPageW) {
         XContainer.style.transform = `translateX(${-33 - (((percent - 0.6) / (0.7 - 0.6)) * (50 - 33))}%)`; 
     }
 
-    if (percent <= 0.65) {
-        for (let l = 0; l < padzbotSideImage.length; l++) {
-            padzbotSideImage[l].classList.remove("ttm");
-        }
+    if (percent <= 0.62) {
+        logoPadmanaba.style.transition = "";
+        logoWrench.style.transition = "";
+        logoPadzbot.style.transition = "";
+
+        logoPadmanaba.style.opacity = "";
+        logoWrench.style.opacity = "";
+        logoPadmanaba.style.left = "";
+        logoWrench.style.right = "";
+        logoPadzbot.style.opacity = "";
+    } else if (percent >= 0.7) {
+        logoPadmanaba.style.transition = "none";
+        logoWrench.style.transition = "none";
+        logoPadzbot.style.transition = "none";
+
+        logoPadmanaba.style.left = "50%";
+        logoWrench.style.right = "50%";
+        logoPadmanaba.style.opacity = "0";
+        logoWrench.style.opacity = "0";
+        logoPadzbot.style.opacity = "1";
     } else {
-        for (let l = 0; l < padzbotSideImage.length; l++) {
-            padzbotSideImage[l].classList.add("ttm");
-        }
+        logoPadmanaba.style.transition = "none";
+        logoWrench.style.transition = "none";
+        logoPadzbot.style.transition = "none";
+
+        let p = ((percent - 0.62) / (0.7 - 0.62));
+        logoPadmanaba.style.left = p * 50 + "%";
+        logoPadmanaba.style.opacity = 1 - p;
+        logoWrench.style.right = p * 50 + "%";
+        logoWrench.style.opacity = 1- p;
+        logoPadzbot.style.opacity = p;
     }
 
     if (percent <= 0.72) {

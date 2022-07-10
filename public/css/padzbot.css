@@ -146,13 +146,10 @@
     left: 50%;
     transform: translateX(-50%);
     height: 120%;
+    max-height: 14em;
     opacity: 0;
     transition: opacity 300ms;
     
-}
-
-.padzbot .padzbotLogo.ttm {
-    opacity: 1;
 }
 
 /* Second section */
