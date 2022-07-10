@@ -38,12 +38,6 @@ html, body {
     margin-left: 0.55em;
 }
 
-@media(orientation: landscape) {
-    .navButton {
-        font-size: calc((1vw + 0.6vh) * 1.45);
-    }
-}
-
 .navButton .buttonContainer{
     width: 45%;
     height: 45%;
@@ -62,7 +56,7 @@ html, body {
 .nav {
     width: 40%;
     min-width: calc((50% + 45vh) * 0.6);
-    font-size: 1vw;
+    font-size: calc((0.8vw + 1vh) * 0.8);
     height: 100%;
     position: fixed;
     top: 0;
@@ -87,11 +81,19 @@ html, body {
 .nav .superContainer{
     width: 82.5%;
     height: 90%;
-    font-size: calc((0.8em + 1vh) * 1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+@media(orientation: landscape) {
+    .navButton {
+        font-size: calc((1vw + 0.6vh) * 1.45);
+    }
+    .nav {
+        font-size: calc((1vw + 0.6vh) * 0.8);
+    }
 }
 
 .nav .upper{
