@@ -21,7 +21,7 @@ html, body {
 /* HEADER */
 
 .navButton{
-    font-size: large;
+    font-size: calc((0.8vw + 1vh) * 1.65);
     width: 3em;
     height: 3em;
     box-sizing: border-box;
@@ -36,6 +36,12 @@ html, body {
     top: calc(5vh + ((9vh - 3em)/2));
     left: 3.25%;
     margin-left: 0.55em;
+}
+
+@media(orientation: landscape) {
+    .navButton {
+        font-size: calc((1vw + 0.6vh) * 1.45);
+    }
 }
 
 .navButton .buttonContainer{
