@@ -202,7 +202,7 @@ function padzbotAnimation(padzbotPageW) {
         XContainer.style.transform = `translateX(${-33 - (((percent - 0.6) / (0.7 - 0.6)) * (50 - 33))}%)`; 
     }
 
-    if (percent <= 0.62) {
+    if (percent <= 0.6) {
         logoPadmanaba.style.transition = "";
         logoWrench.style.transition = "";
         logoPadzbot.style.transition = "";
@@ -212,10 +212,10 @@ function padzbotAnimation(padzbotPageW) {
         logoPadmanaba.style.left = "";
         logoWrench.style.right = "";
         logoPadzbot.style.opacity = "";
-    } else if (percent >= 0.7) {
-        logoPadmanaba.style.transition = "none";
-        logoWrench.style.transition = "none";
-        logoPadzbot.style.transition = "none";
+    } else if (percent >= 0.65) {
+        logoPadmanaba.style.transition = "";
+        logoWrench.style.transition = "";
+        logoPadzbot.style.transition = "";
 
         logoPadmanaba.style.left = "50%";
         logoWrench.style.right = "50%";
@@ -227,12 +227,11 @@ function padzbotAnimation(padzbotPageW) {
         logoWrench.style.transition = "none";
         logoPadzbot.style.transition = "none";
 
-        let p = ((percent - 0.62) / (0.7 - 0.62));
-        logoPadmanaba.style.left = p * 50 + "%";
-        logoPadmanaba.style.opacity = 1 - p;
-        logoWrench.style.right = p * 50 + "%";
-        logoWrench.style.opacity = 1- p;
-        logoPadzbot.style.opacity = p;
+        logoPadmanaba.style.left = (((percent - 0.6) / (0.7 - 0.6)) * 50) + "%";
+        logoPadmanaba.style.opacity = 1 - ((percent - 0.6) / (0.7 - 0.6));
+        logoWrench.style.right = (((percent - 0.6) / (0.7 - 0.6)) * 50) + "%";
+        logoWrench.style.opacity = 1- ((percent - 0.6) / (0.7 - 0.6));
+        logoPadzbot.style.opacity = ((percent - 0.6) / (0.7 - 0.6));
     }
 
     if (percent <= 0.72) {
