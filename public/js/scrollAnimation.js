@@ -14,7 +14,7 @@ var counter = 0;
 var LFPathDistance = LFPath.getTotalLength()
 var interval = LFPathDistance / 200;
 var pointBefore = {x: 0, y: 0};
-var robotikTopPositionS = 0.05 * wh;
+var robotikTopPositionS = 0.06 * wh;
 
 const Xttr = document.getElementById("XtoRight");
 const Xttl = document.getElementById("XtoLeft");
@@ -47,6 +47,7 @@ const KText = document.getElementsByClassName("KText");
 const sideArr = ["sideLeft", "sideCenter", "sideRight"];
 
 const contactSC = document.getElementById("contactSC");
+const joinUs = document.getElementById("joinUs");
 
 function homeAnimation(homePageW) {
     const {top, height} = homePageW.getBoundingClientRect();
@@ -111,12 +112,12 @@ function robotikAnimation(robotikPageW) {
         robotikTitle.classList.remove("RTHidden");
     }
 
-    if (percent <= 0.45) {
+    if (percent <= 0.38) {
         robotikSS.style.top = "";
     } else if (percent >= 0.75) {
         robotikSS.style.top = robotikTopPositionS + "px";
     } else {
-        robotikSS.style.top = (- (((percent - 0.45) / (0.75 - 0.45)) * (robotikTopPositionS))) + "px"; 
+        robotikSS.style.top = (- (((percent - 0.38) / (0.75 - 0.38)) * (robotikTopPositionS))) + "px"; 
     }
 
     const point = LFPath.getPointAtLength(counter);
@@ -206,7 +207,6 @@ function padzbotAnimation(padzbotPageW) {
         logoPadmanaba.style.transition = "";
         logoWrench.style.transition = "";
         logoPadzbot.style.transition = "";
-
         logoPadmanaba.style.opacity = "";
         logoWrench.style.opacity = "";
         logoPadmanaba.style.left = "";
@@ -294,12 +294,12 @@ function kenapaAnimation(kenapaPageW) {
         kenapaTitle.style.position = "";
     }
 
-    if (percent <= 0.35) {
+    if (percent <= 0.33) {
         kenapaTitle.style.opacity = 1;
     } else if (percent >= 0.43){
         kenapaTitle.style.opacity = 0;
     } else {
-        kenapaTitle.style.opacity = ((((percent - 0.35) / (0.43 - 0.35)) * -1)) + 1; 
+        kenapaTitle.style.opacity = ((((percent - 0.33) / (0.43 - 0.33)) * -1)) + 1; 
     }
 
     if (percent <= 0.4) {
@@ -433,10 +433,24 @@ function contactAnimation(contactPageW) {
     const {top, height} = contactPageW.getBoundingClientRect();
     var percent = ((top * -1) / (height));
 
-    if (percent <= 0) {
-        contactSC.classList.add("CSCHidden")
+    if (percent <= 0.3) {
+        joinUs.style.opacity = "";
+    } else if (percent >= 0.45) {
+        joinUs.style.opacity = 0;
     } else {
-        contactSC.classList.remove("CSCHidden")
+        joinUs.style.opacity = 1 - (((percent - 0.3) / (0.45 - 0.3)) * (1));
+    }
+
+    if (percent <= 0.1) {
+        joinUs.classList.add("JUHidden");
+    } else {
+        joinUs.classList.remove("JUHidden");
+    }
+
+    if (percent <= 0.45) {
+        contactSC.classList.add("CSCHidden");
+    } else {
+        contactSC.classList.remove("CSCHidden");
     }
 }
 

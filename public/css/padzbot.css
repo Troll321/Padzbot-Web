@@ -131,16 +131,6 @@
     right: -2em;
 }
 
-.padzbot .timgWrench.ttm {
-    right: 50%;
-    opacity: 0;
-}
-
-.padzbot .timgPadma.ttm{
-    left: 50%;
-    opacity: 0;
-}
-
 .padzbot .padzbotLogo {
     position: absolute;
     left: 50%;
@@ -149,7 +139,6 @@
     max-height: 14em;
     opacity: 0;
     transition: opacity 300ms;
-    
 }
 
 /* Second section */

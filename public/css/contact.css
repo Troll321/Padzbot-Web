@@ -3,11 +3,44 @@
 }
 
 .contact {
-    background-color: #DFDFDF;
     font-size: 1vw;
 }
 
+.contact #joinUs {
+    background-color: #FDFDFD;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    opacity: 1;
+    top: 0;
+    left: 0;
+}
+
+.contact #joinUs h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 10vw;
+    color: black;
+    z-index: 2;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 300ms;
+}
+
+.contact #joinUs.JUHidden h1 {
+    opacity: 0;
+}
+
+/* Second section */
+
 .contact .superContainer{
+    background-color: #DFDFDF;
+    z-index: 1;
     position: relative;
     width: 100%;
     height: 100%;
@@ -26,6 +59,7 @@
 .contact .superContainer.CSCHidden {
     opacity: 0;
     top: -0.5em;
+    background-color: #FDFDFD;
 }
 
 .contact .superContainer * {
