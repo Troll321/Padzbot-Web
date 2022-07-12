@@ -47,6 +47,7 @@ const KText = document.getElementsByClassName("KText");
 const sideArr = ["sideLeft", "sideCenter", "sideRight"];
 
 const contactSC = document.getElementById("contactSC");
+const joinUs = document.getElementById("joinUs");
 
 function homeAnimation(homePageW) {
     const {top, height} = homePageW.getBoundingClientRect();
@@ -434,7 +435,18 @@ function contactAnimation(contactPageW) {
     var percent = ((top * -1) / (height));
 
     if (percent <= 0) {
-        contactSC.classList.add("CSCHidden")
+        joinUs.style.top = "";
+        joinUs.style.opacity = "";
+    } else if (percent >= 0.4) {
+        joinUs.style.top = (0.05 * wh) + "px";
+        joinUs.style.opacity = 0;
+    } else {
+        joinUs.style.top = ((percent / 0.4) * 0.05 * wh) + "px";
+        joinUs.style.opacity = 1 - ((percent / 0.4) * 1);
+    }
+
+    if (percent <= 0.4) {
+        contactSC.classList.add("CSCHidden");
     } else {
         contactSC.classList.remove("CSCHidden")
     }

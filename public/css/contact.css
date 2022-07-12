@@ -7,6 +7,28 @@
     font-size: 1vw;
 }
 
+.contact #joinUs {
+    background-color: #FDFDFD;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    opacity: 1;
+}
+
+.contact #joinUs h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.1vw;
+}
+
+/* Second section */
+
+
 .contact .superContainer{
     position: relative;
     width: 100%;
