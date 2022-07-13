@@ -356,6 +356,9 @@ function kenapaAnimation(kenapaPageW) {
                 const element = KMCs[l];
                 const bounding = element.getBoundingClientRect();
                 KMCPos[l] = {top: bounding.top, right: bounding.right};
+                if (kenapaSC.style.top) {
+                    KMCPos[l].top -= parseInt(kenapaSC.style.top);
+                }
             }
         }
         for (let l = 0; l < KImg.length; l++) {

@@ -124,6 +124,12 @@
     align-items: center;
 }
 
+@media (max-width: 415px) and (min-height: 615px) {
+    .robotik .cmd {
+        font-size: 0.78vw;
+    }
+}
+
 .robotik .cmdUpper{
     background-color: white;
     border-radius: var(--borderRadius) var(--borderRadius) 0 0;
@@ -262,6 +268,30 @@
 
 .robotik .mainText_Text b{
     font-weight: 700;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+.robotik .blinkingPointer {
+    width: 0.8em;
+    height: 1.2em;
+    transform: translateY(25%);
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    animation-name: blink;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+
 }
 
 .robotik .cmdScrollbar{

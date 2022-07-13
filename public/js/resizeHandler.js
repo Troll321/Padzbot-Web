@@ -3,8 +3,9 @@ window.addEventListener("resize", ()=>{
     wh = window.innerHeight;
     additional[2] = wh;
     additional[3] =  wh * 5;
+    additional[4] = wh;
     scrollToAdd[3] = wh * 2.2; 
-    scrollToAdd[4] = wh * 0.3;
+    scrollToAdd[4] = wh * 0.6;
     setPageWrapperDimension();
     pageWrappperHeight = getPageWrapperHeight();
     navWidth = parseInt(getComputedStyle(nav).width)

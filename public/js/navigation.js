@@ -17,9 +17,11 @@ navButton.addEventListener("click", ()=>{
     if (dataset.state == "opened") {
         style.transform = "translateX(-110%)";
         dataset.state = "closed";
+        navButton.classList.remove("open");
     } else {
         style.transform = "translateX(0)";
         dataset.state = "opened";
+        navButton.classList.add("open");
     }
 });
 

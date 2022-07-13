@@ -51,11 +51,27 @@ html, body {
     width: 100%;
     height: 0.2em;
     background-color: black;
+    transition-property: transform;
+    transition-duration: 300ms;
+}
+
+.navButton.open .buttonContainer div {
+    transform: rotateZ(180deg);
+}
+
+@media (pointer: fine) {
+    .navButton.open:hover .buttonContainer div {
+        transform: rotateZ(150deg);
+    }
+
+    .navButton:hover .buttonContainer div {
+        transform: rotateZ(30deg);
+    }
 }
 
 .nav {
     width: 40%;
-    min-width: calc((50% + 45vh) * 0.6);
+    min-width: calc((50% + 45vh) * 0.57);
     font-size: calc((0.8vw + 1vh) * 0.8);
     height: 100%;
     position: fixed;
