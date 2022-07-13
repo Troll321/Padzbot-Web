@@ -31,5 +31,6 @@ window.addEventListener("click", (event)=>{
     if (event.x > navWidth) {
         style.transform = "translateX(-110%)";
         dataset.state = "closed";
+        navButton.classList.remove("open");
     }
 });
