@@ -6,6 +6,9 @@ function onclickHandler(id) {
     document.getElementsByClassName(id)[0].classList.add("active");
     dataset.state = "closed";
     style.transform = "translateX(-110%)";
+    setTimeout(() => {
+        window.scrollBy(0, scrollToAdd[pnToIndex(id)]);
+    }, 0);
 }
 
 navButton.addEventListener("click", ()=>{

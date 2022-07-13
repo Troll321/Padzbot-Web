@@ -3,6 +3,7 @@ var wh = window.innerHeight;
 const pageWrapper = document.getElementsByClassName("pageWrapper");
 const pages = document.getElementsByClassName("page");
 const additional = [600, 1000, wh, wh * 5, 1000];
+const scrollToAdd = [0, 0, 0, wh * 2.2, wh * 0.3];
 const scrollKey = "QWGDFefvbnBHJnyjBbbh";
 var kenapaNeedMin = true;
 
