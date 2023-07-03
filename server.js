@@ -8,11 +8,7 @@ const setting = {
 app.use(express.static("public"));
 
 app.get("*", (req,res)=>{
-    res.sendFile("html/index.html", setting);
+    res.sendFile("index.html", setting);
 });
-
-app.get("/", (req, res) => {
-    res.json(setting);
-})
 
 app.listen(process.env.PORT || 3000);
